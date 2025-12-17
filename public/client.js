@@ -32,6 +32,7 @@ function calculate(operand1, operand2, operation) {
         case '/':
             uri += "?operation=divide";
             break;
+        // Add power operation helper using Copilot-style suggestion
         case '^':
             uri += "?operation=power";
             break;
