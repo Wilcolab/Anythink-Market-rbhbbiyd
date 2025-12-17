@@ -16,10 +16,6 @@ exports.calculate = function(req, res) {
     'subtract': function(a, b) { return a - b },
     'multiply': function(a, b) { return a * b },
     'divide':   function(a, b) { return a / b },
-    // test power operation
-    'power': function(a, b) {
-  return Math.pow(Number(a), Number(b));
-}
   };
 
   if (!req.query.operation) {

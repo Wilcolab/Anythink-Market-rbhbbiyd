@@ -17,8 +17,9 @@ var operand2 = 0;
 var operation = null;
 
 function calculate(operand1, operand2, operation) {
-    var uri = location.origin + "/calculate";
+    var uri = location.origin + "/arithmetic";
 
+    // TODO: Add operator
     switch (operation) {
         case '+':
             uri += "?operation=add";
@@ -31,10 +32,6 @@ function calculate(operand1, operand2, operation) {
             break;
         case '/':
             uri += "?operation=divide";
-            break;
-        // Add power operation helper using Copilot-style suggestion
-        case '^':
-            uri += "?operation=power";
             break;
         default:
             setError();
@@ -63,6 +60,7 @@ function calculate(operand1, operand2, operation) {
 
 function clearPressed() {
     setValue(0);
+
     operand1 = 0;
     operand2 = 0;
     operation = null;
@@ -88,6 +86,7 @@ function numberPressed(n) {
     }
 
     value += "";
+
     setValue(value);
 }
 
@@ -105,6 +104,7 @@ function decimalPressed() {
 
 function signPressed() {
     var value = getValue();
+
     if (value != 0) {
         setValue(-1 * value);
     }
@@ -132,14 +132,15 @@ function equalPressed() {
     calculate(operand1, operand2, operation);
 }
 
+// TODO: Add key press logics
 document.addEventListener('keypress', (event) => {
     if (event.key.match(/^\d+$/)) {
         numberPressed(event.key);
     } else if (event.key == '.') {
         decimalPressed();
-    } else if (event.key.match(/^[-*+/^]$/)) {
+    } else if (event.key.match(/^[-*+/]$/)) {
         operationPressed(event.key);
-    } else if (event.key == '=' || event.key == 'Enter') {
+    } else if (event.key == '=') {
         equalPressed();
     }
 });
@@ -192,6 +193,7 @@ function setLoading(loading) {
     }
 
     var buttons = document.querySelectorAll("BUTTON");
+
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].disabled = loading;
     }
