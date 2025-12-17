@@ -198,3 +198,8 @@ function setLoading(loading) {
         buttons[i].disabled = loading;
     }
 }
+
+// function to handle power operation
+function powerOperation(base, exponent) {
+    return Math.pow(base, exponent);
+}
