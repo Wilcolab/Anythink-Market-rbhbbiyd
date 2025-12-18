@@ -37,3 +37,9 @@ The FastAPI server provides the following API routes:
 - `POST /tasks`: Adds a task to the task list. The request body should contain the task details.
 
 - `GET /tasks`: Retrieves the task list.
+
+Project Overview: Python to Node.js MigrationThis project has been migrated from a FastAPI Python server to a Node.js Express server to improve scalability and performance. Both servers are currently available to ensure compatibility during the transition.Server DetailsFeaturePython Server (Legacy)Node.js Server (New)FrameworkFastAPIExpress.jsPort80008001Docker Imagepython:3.9-slimnode:14How to RunTo run both servers simultaneously using Docker Compose, use the following command in the root directory:Bashdocker compose up --build
+API Endpoints (Node.js)The new Node.js server implements the following routes:GET /tasks: Retrieves the list of time-travel tasks.POST /tasks: Adds a new task to the list (requires a JSON body with a text field).Final Steps to Complete the QuestOnce you have saved the manual updates to the file:Stage and Commit:Bashgit add README.md
+git commit -m "docs: manually update README with migration details"
+Push and Open PR:Bashgit push origin task/update-readme
+Merge: Once Lucca approves, merge the PR to finalize the quest.
