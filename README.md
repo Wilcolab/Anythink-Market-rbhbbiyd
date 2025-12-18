@@ -42,3 +42,16 @@ The Python server has been migrated to Node.js using Express.
 - **Port:** 8001
 - **Endpoint:** `GET /tasks` and `POST /tasks`
 - **To run:** `docker compose up`
+
+## Server Migration Complete
+We have successfully migrated the backend from Python (FastAPI) to Node.js (Express).
+
+### Accessing the Servers:
+- **Python Server:** [http://localhost:8000/tasks](http://localhost:8000/tasks)
+- **Node.js Server:** [http://localhost:8001/tasks](http://localhost:8001/tasks)
+
+### Changes made:
+1. Created `node-server` directory with Express.js.
+2. Implemented GET and POST `/tasks` routes in Node.js.
+3. Updated `docker-compose.yml` to orchestrate both environments.
+4. Verified data parity between both endpoints.
