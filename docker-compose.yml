@@ -1,9 +1,19 @@
+version: '3.8'
+
 services:
   python-server:
     build:
       context: ./python-server
-      dockerfile: Dockerfile
+    # This environment variable fixes the "ModuleNotFoundError: No module named 'src'"
+    environment:
+      - PYTHONPATH=/app
     ports:
-      - 8000:8000
+      - "8000:8000"
+
+  node-server:
+    build:
+      context: ./node-server
+    ports:
+      - "8001:8001"
     volumes:
-      - ./python-server/src:/app/src
+      - ./node-server:/app
