@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
     res.send('Node server is running and tasks are migrated!');
 });
 
+// Ensure '0.0.0.0' is included
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Node server listening on http://localhost:${port}`);
+  console.log(`Node server listening on http://0.0.0.0:${port}`);
 });

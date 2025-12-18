@@ -3,7 +3,7 @@ services:
     build:
       context: ./python-server
     environment:
-      # This is the key fix for "No module named 'src'"
+      # This ensures Python looks in the current directory for the 'src' folder
       - PYTHONPATH=. 
     ports:
       - "8000:8000"
@@ -13,5 +13,6 @@ services:
       context: ./node-server
     ports:
       - "8001:8001"
+    # Ensure all code is copied during build rather than relying only on volumes
     volumes:
       - ./node-server:/app
